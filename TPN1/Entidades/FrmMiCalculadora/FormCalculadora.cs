@@ -31,7 +31,7 @@ namespace FrmMiCalculadora
         {
             Numero numero3 = new Numero();
 
-            lblResultado.Text= numero3.DecimalBinario(textNumero1.Text);
+            lblResultado.Text= numero3.DecimalBinario(lblResultado.Text);
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace FrmMiCalculadora
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             Numero numero3 = new Numero();
-            lblResultado.Text = numero3.BinarioDecimal(textNumero1.Text);
+            lblResultado.Text = numero3.BinarioDecimal(lblResultado.Text);
         }
         /// <summary>
         /// Limpia los controles de textbox,label,combobox

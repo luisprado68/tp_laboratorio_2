@@ -11,3 +11,16 @@ C:\Users\luisp\Downloads\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculad
 C:\Users\luisp\Downloads\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.exe
 C:\Users\luisp\Downloads\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.pdb
 C:\Users\luisp\Downloads\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.FormCalculadora.resources
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\bin\Debug\FrmMiCalculadora.exe.config
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\bin\Debug\FrmMiCalculadora.exe
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\bin\Debug\FrmMiCalculadora.pdb
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\bin\Debug\Entidades.dll
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\bin\Debug\Entidades.pdb
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.csprojAssemblyReference.cache
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.FormCalculadora.resources
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.Properties.Resources.resources
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.csproj.GenerateResource.cache
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.csproj.CopyComplete
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.exe
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN1\Entidades\FrmMiCalculadora\obj\Debug\FrmMiCalculadora.pdb
