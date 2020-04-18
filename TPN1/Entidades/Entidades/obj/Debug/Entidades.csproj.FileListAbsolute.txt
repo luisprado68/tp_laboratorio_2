@@ -1,0 +1,6 @@
+C:\Users\luisp\Downloads\TPN1\Entidades\Entidades\bin\Debug\Entidades.dll
+C:\Users\luisp\Downloads\TPN1\Entidades\Entidades\bin\Debug\Entidades.pdb
+C:\Users\luisp\Downloads\TPN1\Entidades\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\luisp\Downloads\TPN1\Entidades\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\luisp\Downloads\TPN1\Entidades\Entidades\obj\Debug\Entidades.dll
+C:\Users\luisp\Downloads\TPN1\Entidades\Entidades\obj\Debug\Entidades.pdb
