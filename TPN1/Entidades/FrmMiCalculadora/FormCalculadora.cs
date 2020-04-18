@@ -13,7 +13,6 @@ namespace FrmMiCalculadora
 {
     public partial class FormCalculadora : Form
     {
-
         /// <summary>
         /// Constructor de el formulario
         /// </summary>
