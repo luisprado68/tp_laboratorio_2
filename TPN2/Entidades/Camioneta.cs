@@ -9,7 +9,7 @@ namespace Entidades
     public class Camioneta : Vehiculo
     {
         /// <summary>
-        /// Constructor de camioneta
+        /// Constructor de camionetas
         /// </summary>
         /// <param name="marca"></param>
         /// <param name="chasis"></param>

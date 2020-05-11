@@ -15,26 +15,24 @@ namespace Entidades
         ETipo tipo;
 
         /// <summary>
-        /// Por defecto, TIPO será Monovolumen
+        /// Por defecto, TIPO será Monovolumen, constructor automovil
         /// </summary>
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         public Automovil(EMarca marca, string chasis, ConsoleColor color) : base(chasis, marca, color)
-
         {
             this.tipo = ETipo.Monovolumen;
         }
 
         /// <summary>
-        /// Constructor de automovil
+        /// constructor de Automovil
         /// </summary>
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         /// <param name="tipo"></param>
         public Automovil(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : this(marca, chasis, color)
-
         {
             this.tipo = tipo;
         }
@@ -51,7 +49,7 @@ namespace Entidades
         }
 
         /// <summary>
-        /// retorna un string con los datos del automovil
+        /// Devuelve string con todos los datos del auotmovil
         /// </summary>
         /// <returns></returns>
         public override sealed string Mostrar()

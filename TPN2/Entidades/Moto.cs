@@ -15,7 +15,6 @@ namespace Entidades
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         public Moto(EMarca marca, string chasis, ConsoleColor color) : base(chasis, marca, color)
-
         {
         }
 

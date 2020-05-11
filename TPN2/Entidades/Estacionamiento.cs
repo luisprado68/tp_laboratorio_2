@@ -25,8 +25,7 @@ namespace Entidades
         /// </summary>
         private Estacionamiento()
         {
-
-            this.vehiculos = new List<Vehiculo>();
+               this.vehiculos = new List<Vehiculo>();
         }
         /// <summary>
         /// Constructor que asigna espacio disponible
@@ -46,7 +45,7 @@ namespace Entidades
         /// <returns></returns>
         public override string ToString()
         {
-            return Estacionamiento.Mostrar(this, ETipo.Todos);
+                return Estacionamiento.Mostrar(this, ETipo.Todos);
         }
         #endregion
 
@@ -76,6 +75,7 @@ namespace Entidades
                             sb.AppendLine(v.Mostrar());
                         }
                         break;
+
                     case ETipo.Moto:
 
                         if (v is Moto)
@@ -83,6 +83,7 @@ namespace Entidades
                             sb.AppendLine(v.Mostrar());
                         }
                         break;
+
                     case ETipo.Automovil:
 
                         if (v is Automovil)
@@ -109,7 +110,7 @@ namespace Entidades
         /// <param name="p">Objeto a agregar</param>
         /// <returns></returns>
         /// 
-        //del pibe
+        
         public static Estacionamiento operator +(Estacionamiento c, Vehiculo p)
         {
             if (c.vehiculos.Count() < c.espacioDisponible)

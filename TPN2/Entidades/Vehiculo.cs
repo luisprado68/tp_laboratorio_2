@@ -48,7 +48,7 @@ namespace Entidades
         /// <returns></returns>
         public virtual string Mostrar()
         {
-            return (string)this;
+                return (string)this;
         }
 
         /// <summary>
