@@ -8,7 +8,7 @@ namespace Excepciones
 {
     public class SinProfesorException : Exception
     {
-        public SinProfesorException() : base("Este es el mensaje por defecto")
+        public SinProfesorException() : base("No hay profesor par la clase")
         {
 
         }
