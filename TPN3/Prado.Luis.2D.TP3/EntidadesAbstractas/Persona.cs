@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Entidades
+namespace EntidadesAbstractas
 {
-    public enum Enacionalidad
-    {
-        Argentino,
-        Extranjero
-    }
+   
     public abstract class Persona
     {
+        public enum ENacionalidad
+        {
+            Argentino,
+            Extranjero
+        }
+
         private string nombre;
         private string apellido;
-        private Enacionalidad nacionalidad;
+        private ENacionalidad nacionalidad;
         private int dni;
 
-       
+
         public string Nombre
         {
             get { return this.nombre; }
@@ -30,7 +31,7 @@ namespace Entidades
             get { return this.apellido; }
             set { this.apellido = value; }
         }
-        public Enacionalidad Nacionalidad
+        public ENacionalidad Nacionalidad
         {
             get { return this.nacionalidad; }
             set { this.nacionalidad = value; }
@@ -38,25 +39,33 @@ namespace Entidades
         public int Dni
         {
             get { return this.dni; }
-            set { this.dni = value; }
+            set
+            {
+                this.ValidarDni(this.Nacionalidad, value);
+                this.dni = value;
+            }
         }
 
         public string StringToDni
         {
-           
-            set { this.dni = 10; }
+
+            set
+            {
+                this.ValidarDni(this.Nacionalidad, value);
+                this.dni = 10;
+            }
         }
 
-       public Persona()
+        public Persona()
         {
             this.nombre = "Sin Nombre";
             this.apellido = "Sin Apellido";
-            this.nacionalidad = Enacionalidad.Argentino;
+            this.nacionalidad = ENacionalidad.Argentino;
             this.dni = 0;
-            
+
         }
 
-        public Persona(string nombre, string apellido,Enacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad):this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -64,7 +73,7 @@ namespace Entidades
 
         }
 
-        public Persona(string nombre, string apellido,int dni, Enacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad):this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -73,7 +82,7 @@ namespace Entidades
 
         }
 
-        public Persona(string nombre, string apellido, string dni, Enacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad):this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -86,40 +95,41 @@ namespace Entidades
         {
             StringBuilder datos = new StringBuilder();
 
-            
-            datos.AppendLine($"Nombre:{this.Nombre}");
-            datos.AppendLine($"Apellido:{this.Apellido}");
-            datos.AppendLine($"Dni:{this.Dni}");
-            datos.AppendLine($"Nacionalidad:{this.Nacionalidad}");
+
+            datos.AppendLine($"NOMRE COMPLETO:{this.Nombre}");
+            datos.Append($",{this.Apellido}");
+            datos.AppendLine($"NACIONALIDAD:{this.Nacionalidad}");
+            datos.AppendLine($"DNI:{this.Dni}");
+
 
 
             return datos.ToString();
         }
-        private int ValidarDni(Enacionalidad nacionalidad, int dato)
+        private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
-            if(nacionalidad == Enacionalidad.Argentino)
+            if (nacionalidad == ENacionalidad.Argentino)
             {
-                if(dato <=1 && dato >= 89999999)
+                if (dato <= 1 && dato >= 89999999)
                 {
                     return dato;
                 }
             }
-            else if(nacionalidad == Enacionalidad.Extranjero)
+            else if (nacionalidad == ENacionalidad.Extranjero)
             {
                 if (dato <= 90000000 && dato >= 99999999)
                 {
                     return dato;
                 }
             }
-
+            throw new NacionalidadInvalidadException("Nacionalidad invalida");
             return 0;
         }
 
-        private int ValidarDni(Enacionalidad nacionalidad, string dato)
+        private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
             int resultado;
-            
-            if (int.TryParse(dato,out int dni)) 
+
+            if (int.TryParse(dato, out int dni))
             {
                 resultado = ValidarDni(nacionalidad, dni);
                 if (resultado != 0)
@@ -127,7 +137,7 @@ namespace Entidades
                     return resultado;
                 }
             }
-
+            throw new DniInvalidoException("Dni invalido");
             return 0;
         }
 
@@ -135,7 +145,7 @@ namespace Entidades
         {
             foreach (char item in dato)
             {
-                if(item >= 'a' && item >= 'z' || item >= 'A' && item >= 'Z')
+                if (item >= 'a' && item >= 'z' || item >= 'A' && item >= 'Z')
                 {
                     return dato;
                 }

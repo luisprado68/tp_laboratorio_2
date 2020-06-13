@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace Excepciones
 {
     public class DniInvalidoException : Exception
     {
@@ -21,7 +21,7 @@ namespace Entidades
         {
 
         }
-        public DniInvalidoException(string message, Exception e) : base(message,e)
+        public DniInvalidoException(string message, Exception e) : base(message, e)
         {
 
         }

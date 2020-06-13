@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace Excepciones
 {
-    public class AlumnoRepetidoException  :Exception
+    public class SinProfesorException : Exception
     {
-        public AlumnoRepetidoException() : base("Este es el mensaje por defecto")
+        public SinProfesorException() : base("Este es el mensaje por defecto")
         {
 
         }
