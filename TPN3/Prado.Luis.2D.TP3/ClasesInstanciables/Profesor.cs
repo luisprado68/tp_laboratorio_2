@@ -20,12 +20,12 @@ namespace ClasesInstanciables
         }
         public Profesor() : base()
         {
-            this.clasesDelDia = new Queue<Universidad.EClases>();
+            
         }
 
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad)
         {
-
+            this.clasesDelDia = new Queue<Universidad.EClases>();
             RandomClases();
 
         }

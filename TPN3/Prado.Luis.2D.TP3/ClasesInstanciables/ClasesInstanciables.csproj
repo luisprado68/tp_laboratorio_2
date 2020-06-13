@@ -52,6 +52,10 @@
       <Project>{66b0d1a9-71cc-445a-b425-77d34889edce}</Project>
       <Name>EntidadesAbstractas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{acf0ce74-be0e-45bc-9d29-666d1b05b87f}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

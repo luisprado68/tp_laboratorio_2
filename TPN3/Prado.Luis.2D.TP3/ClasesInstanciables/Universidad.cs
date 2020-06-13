@@ -89,7 +89,7 @@ namespace ClasesInstanciables
             return !(u == p);
         }
 
-        public static bool operator ==(Universidad u, EClases clase)
+        public static Profesor operator ==(Universidad u, EClases clase)
         {
             int indice =0;
             for (int i=0;i<u.Profesores.Count;i++)
@@ -104,9 +104,31 @@ namespace ClasesInstanciables
 
             if(indice != 0)
             {
+                
                 return u.Profesores[indice];
             }
+            else
+            {
+                throw new SinProfesorException();
+            }
             
+        }
+        public static Profesor operator !=(Universidad u, EClases clase)
+        {
+            int indice = 0;
+            for (int i = 0; i < u.Profesores.Count; i++)
+            {
+                if (u.Profesores[i] != clase)
+                {
+                    indice = i;
+                    break;
+
+                }
+
+            }
+
+                return u.Profesores[indice];
+
         }
 
         public static Universidad operator +(Universidad u, EClases clase)
@@ -148,7 +170,36 @@ namespace ClasesInstanciables
 
             return u;
         }
+        public static Universidad operator +(Universidad u, Profesor p)
+        {
+            if(u != p)
+            {
+                u.Profesores.Add(p);
 
+                return u;
+            }
+            return u;
+        }
+        private string MostrarDatos(Universidad uni)
+        {
+            StringBuilder datos = new StringBuilder();
 
+            datos.AppendLine("Jornada");
+            foreach (Jornada item in this.Jornadas)
+            {
+                datos.AppendLine(item.ToString());
+            }
+
+            return datos.ToString();
+        }
+
+        public override string ToString()
+        {
+            StringBuilder datos = new StringBuilder();
+
+            datos.Append(this.MostrarDatos(this));
+
+            return datos.ToString();
+        }
     }
 }

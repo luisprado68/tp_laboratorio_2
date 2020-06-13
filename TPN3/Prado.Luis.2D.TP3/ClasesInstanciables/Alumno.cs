@@ -39,8 +39,9 @@ namespace ClasesInstanciables
             StringBuilder datos = new StringBuilder();
 
 
-            datos.Append(base.ToString());
+            datos.Append(base.MostrarDatos());
 
+           
             datos.AppendLine($"ESTADO DE CUENTA:{this.estadoCuenta}");
 
             return datos.ToString();

@@ -74,9 +74,15 @@ namespace ClasesInstanciables
         {
             StringBuilder datos = new StringBuilder();
 
-            datos.AppendLine("JORNADA:");
-            datos.AppendLine($"CLASE DE {this.clase} POR");
-            datos.Append(this.Instructor.ToString());
+           
+            datos.Append($"CLASE DE {this.clase} POR");
+            datos.AppendLine(this.Instructor.ToString());
+
+            foreach (Alumno item in this.Alumnos)
+            {
+                datos.Append(item.ToString());
+            }
+            
 
 
             return datos.ToString();

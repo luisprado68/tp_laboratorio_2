@@ -97,8 +97,8 @@ namespace EntidadesAbstractas
             StringBuilder datos = new StringBuilder();
 
 
-            datos.AppendLine($"NOMRE COMPLETO:{this.Nombre}");
-            datos.Append($",{this.Apellido}");
+            datos.Append($"NOMBRE COMPLETO:{this.Nombre}");
+            datos.AppendLine($",{this.Apellido}");
             datos.AppendLine($"NACIONALIDAD:{this.Nacionalidad}");
             datos.AppendLine($"DNI:{this.Dni}");
 
@@ -122,7 +122,11 @@ namespace EntidadesAbstractas
                     return dato;
                 }
             }
-            throw new NacionalidadInvalidadException("Nacionalidad invalida");
+            else
+            {
+                throw new NacionalidadInvalidaException("Nacionalidad invalida");
+            }
+           
             return 0;
         }
 
@@ -138,7 +142,11 @@ namespace EntidadesAbstractas
                     return resultado;
                 }
             }
-            throw new DniInvalidoException("Dni invalido");
+            else
+            {
+                throw new DniInvalidoException("Dni invalido");
+            }
+            
             return 0;
         }
 
