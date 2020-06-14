@@ -13,6 +13,9 @@ namespace ClasesInstanciables
    
     public class Universidad
     {
+        /// <summary>
+        /// Enum de tipo Eclases
+        /// </summary>
         public enum EClases
         {
             Programacion,
@@ -24,25 +27,39 @@ namespace ClasesInstanciables
         private List<Alumno> alumnos;
         private List<Jornada> jornada;
         private List<Profesor> profesores;
-
+        
+        /// <summary>
+        /// Obtiene o setea la lista de alumnos
+        /// </summary>
         public List<Alumno> Alumnos
         {
             get { return this.alumnos; }
             set { this.alumnos = value; }
         }
 
+        /// <summary>
+        /// Obtiene o setea la lista de jornadas
+        /// </summary>
         public List<Jornada> Jornadas
         {
             get { return this.jornada; }
             set { this.jornada = value; }
         }
 
+        /// <summary>
+        /// Obtiene o setea la lista de profesore
+        /// </summary>
         public List<Profesor> Profesores
         {
             get { return this.profesores; }
             set { this.profesores = value; }
         }
 
+        /// <summary>
+        /// Obtiene la jorada o setea por indice
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
         public Jornada this[int i] 
         {
             
@@ -50,6 +67,9 @@ namespace ClasesInstanciables
             set { this.jornada[i] = value; } 
         }
 
+        /// <summary>
+        /// Constructor universidad
+        /// </summary>
         public Universidad()
         {
             alumnos = new List<Alumno>();
@@ -57,6 +77,12 @@ namespace ClasesInstanciables
             jornada = new List<Jornada>();
         }
 
+        /// <summary>
+        /// Compara si el alumno de parametro existe en la lista de alumnos
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns>Retorna true si existe caso contrario false</returns>
         public static bool operator ==(Universidad u, Alumno a)
         {
             foreach (Alumno item in u.Alumnos)
@@ -68,11 +94,23 @@ namespace ClasesInstanciables
             }
             return false;
         }
+        /// <summary>
+        /// Compara si el alumno de parametro existe en la lista de alumnos
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns>Retorna true no  existe caso contrario false</returns>
         public static bool operator !=(Universidad u, Alumno a)
         {
             return !(u == a);
         }
 
+        /// <summary>
+        /// Compara la lista de profesores si existe el profesor en parametro
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="p"></param>
+        /// <returns>Retorna true si existe de lo contrario false</returns>
         public static bool operator ==(Universidad u, Profesor p)
         {
             foreach (Profesor item in u.Profesores)
@@ -84,12 +122,23 @@ namespace ClasesInstanciables
             }
             return false;
         }
-
+        /// <summary>
+        /// Compara la lista de profesores si existe el profesor en parametro
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="p"></param>
+        /// <returns>Retorna true si no existe de lo contrario false</returns>
         public static bool operator !=(Universidad u, Profesor p)
         {
             return !(u == p);
         }
 
+        /// <summary>
+        /// Compara los si existe un profesor que tenga una clase igual a la pasada por parametro si no lanza la excepcion
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="clase"></param>
+        /// <returns> retorna el profesor </returns>
         public static Profesor operator ==(Universidad u, EClases clase)
         {
             
@@ -107,6 +156,12 @@ namespace ClasesInstanciables
             
             
         }
+        /// <summary>
+        /// Compara al primer  profesor que tenga una clase distinta a  la pasada por parametro si no lanza la excepcion
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="clase"></param>
+        /// <returns> retorna el profesor </returns>
         public static Profesor operator !=(Universidad u, EClases clase)
         {
            
@@ -126,6 +181,12 @@ namespace ClasesInstanciables
                
         }
 
+        /// <summary>
+        /// Agrega una nueva jornada a la universidad con el profesor y alumnos de misma clase
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="clase"></param>
+        /// <returns>Retorna la universidad</returns>
         public static Universidad operator +(Universidad u, EClases clase)
         {
             int indice=0;
@@ -146,6 +207,12 @@ namespace ClasesInstanciables
             return u;
         }
 
+        /// <summary>
+        /// Agrega un alumno si no existe en la lista de alumnos si no lanza una excepcion
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns>Retorna objeto la universidad</returns>
         public static Universidad operator +(Universidad u, Alumno a)
         {
             if(u != a)
@@ -159,6 +226,13 @@ namespace ClasesInstanciables
 
             return u;
         }
+
+        /// <summary>
+        /// Agrega un profesor si no existe en la lista de profesores 
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns>Retorna objeto la universidad</returns>
         public static Universidad operator +(Universidad u, Profesor p)
         {
             if(u != p)
@@ -169,6 +243,11 @@ namespace ClasesInstanciables
             }
             return u;
         }
+        /// <summary>
+        /// Muestra los datos de la universidad
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns>Retorna los datos en cadena de texto</returns>
         private string MostrarDatos(Universidad uni)
         {
             StringBuilder datos = new StringBuilder();
@@ -182,6 +261,10 @@ namespace ClasesInstanciables
             return datos.ToString();
         }
 
+        /// <summary>
+        /// Muestra los datos de la universidad
+        /// </summary>
+        /// <returns>Devuelve los datos en cadena de texto</returns>
         public override string ToString()
         {
             StringBuilder datos = new StringBuilder();
@@ -213,7 +296,10 @@ namespace ClasesInstanciables
 
             
         }
-
+        /// <summary>
+        /// Genera un Archivo Xml con los datos de la Universidad
+        /// </summary>
+        /// <returns>Retorna la nueva universida leida</returns>
         public Universidad Leer()
         {
             Xml<Universidad> archivo = new Xml<Universidad>();

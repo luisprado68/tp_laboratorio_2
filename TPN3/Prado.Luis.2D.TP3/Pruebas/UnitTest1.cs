@@ -8,8 +8,11 @@ namespace Pruebas
     [TestClass]
     public class UnitTest1
     {
+        /// <summary>
+        /// Espera una excepcion de un alumno igual agregado a universidad
+        /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(AlumnoRepetidoException))]//espera una excepcion de persona sin dni
+        [ExpectedException(typeof(AlumnoRepetidoException))]//
         public void AlumnoRepetido()
         {
             Universidad uni = new Universidad();
@@ -26,6 +29,9 @@ namespace Pruebas
 
         }
 
+        /// <summary>
+        /// Espera una excepcion de una nacionalidad invalida
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NacionalidadInvalidaException))]//espera una excepcion de persona sin dni
         public void NacionalidadInvalida()
@@ -40,6 +46,9 @@ namespace Pruebas
 
         }
 
+        /// <summary>
+        /// Valida que la lista de alumnos de universidad no sea nula
+        /// </summary>
         [TestMethod]
         public void ValidarListaAlumnos()
         {

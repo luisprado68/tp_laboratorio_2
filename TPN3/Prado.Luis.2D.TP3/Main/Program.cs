@@ -18,8 +18,6 @@ namespace Main
             EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
             Alumno.EEstadoCuenta.Becado);
             uni += a1;
-
-
             try
             {
                 Alumno a2 = new Alumno(2, "Juana", "Martinez", "12234458",
@@ -62,17 +60,12 @@ namespace Main
             EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Legislacion,
             Alumno.EEstadoCuenta.AlDia);
             uni += a8;
-
             Profesor i1 = new Profesor(1, "Juan", "Lopez", "12224458",
             EntidadesAbstractas.Persona.ENacionalidad.Argentino);
             uni += i1;
             Profesor i2 = new Profesor(2, "Roberto", "Juarez", "32234456",
             EntidadesAbstractas.Persona.ENacionalidad.Argentino);
             uni += i2;
-
-            
-
-
             try
             {
                 uni += Universidad.EClases.Programacion;
