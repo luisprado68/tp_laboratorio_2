@@ -19,6 +19,7 @@ namespace Main
             Alumno.EEstadoCuenta.Becado);
             uni += a1;
 
+
             try
             {
                 Alumno a2 = new Alumno(2, "Juana", "Martinez", "12234458",
@@ -68,6 +69,10 @@ namespace Main
             Profesor i2 = new Profesor(2, "Roberto", "Juarez", "32234456",
             EntidadesAbstractas.Persona.ENacionalidad.Argentino);
             uni += i2;
+
+            
+
+
             try
             {
                 uni += Universidad.EClases.Programacion;
@@ -102,7 +107,7 @@ namespace Main
             }
             Console.WriteLine(uni.ToString());
             Console.ReadKey();
-            Console.Clear();
+            //Console.Clear();
             //try
             //{
             //    Universidad.Guardar(uni);

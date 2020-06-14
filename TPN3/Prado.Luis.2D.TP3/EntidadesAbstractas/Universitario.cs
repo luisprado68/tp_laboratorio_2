@@ -40,7 +40,7 @@ namespace EntidadesAbstractas
         public static bool operator ==(Universitario pg1, Universitario pg2)
         {
 
-            if (pg1.Equals(pg2) && pg1.legajo == pg2.legajo)
+            if (pg1.Equals(pg2) && pg1.RetornoDni() == pg2.RetornoDni())
             {
                 return true;
             }

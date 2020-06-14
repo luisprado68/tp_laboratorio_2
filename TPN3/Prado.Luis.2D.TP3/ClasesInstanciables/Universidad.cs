@@ -91,60 +91,48 @@ namespace ClasesInstanciables
 
         public static Profesor operator ==(Universidad u, EClases clase)
         {
-            int indice =0;
+            
             for (int i=0;i<u.Profesores.Count;i++)
             {
                 if (u.Profesores[i] == clase)
                 {
-                    indice = i;
+                    return u.Profesores[i];
 
                 }
 
             }
 
-            if(indice != 0)
-            {
-                
-                return u.Profesores[indice];
-            }
-            else
-            {
                 throw new SinProfesorException();
-            }
+            
             
         }
         public static Profesor operator !=(Universidad u, EClases clase)
         {
-            int indice = 0;
+           
             for (int i = 0; i < u.Profesores.Count; i++)
             {
                 if (u.Profesores[i] != clase)
                 {
-                    indice = i;
-                    break;
+                    return u.Profesores[i];
+
 
                 }
 
             }
+            throw new SinProfesorException();
 
-                return u.Profesores[indice];
-
+          
+               
         }
 
         public static Universidad operator +(Universidad u, EClases clase)
         {
             int indice=0;
-            
-            for (int i=0;i<u.Profesores.Count;i++)
-            {
-                if (u.Profesores[i] == clase)
-                {
-                    indice = i;
+            Profesor profe;
 
-                }
+            profe = u == clase;
 
-            }
-            Jornada nueva = new Jornada(clase, u.Profesores[indice]);
+            Jornada nueva = new Jornada(clase, profe);
             foreach (Alumno alumno in u.Alumnos)
             {
                 if (alumno == clase)

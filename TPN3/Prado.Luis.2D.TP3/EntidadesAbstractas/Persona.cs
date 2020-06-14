@@ -37,32 +37,47 @@ namespace EntidadesAbstractas
             get { return this.nacionalidad; }
             set { this.nacionalidad = value; }
         }
-        public int Dni
+
+        public void  SetDni(int dni)
         {
-            get { return this.dni; }
-            set
-            {
-                this.ValidarDni(this.Nacionalidad, value);
-                this.dni = value;
-            }
+            this.dni = this.ValidarDni(this.Nacionalidad, dni);
         }
 
-        public string StringToDni
+        public void SetDniString(string dni)
         {
-
-            set
-            {
-                this.ValidarDni(this.Nacionalidad, value);
-                this.dni = 10;
-            }
+            this.dni = this.ValidarDni(this.Nacionalidad, dni);
         }
+
+        public int  RetornoDni()
+        {
+            return this.dni;
+        }
+
+        //public int Dni
+        //{
+        //    get { return this.dni; }
+        //    set
+        //    {
+                
+        //        this.dni = this.ValidarDni(this.Nacionalidad, value);
+        //    }
+        //}
+
+        //public string StringToDni
+        //{
+
+        //    set
+        //    {
+                
+        //        this.dni = this.ValidarDni(this.Nacionalidad, value);
+        //    }
+        //}
 
         public Persona()
         {
             this.nombre = "Sin Nombre";
             this.apellido = "Sin Apellido";
-            this.nacionalidad = ENacionalidad.Argentino;
-            this.dni = 0;
+            
 
         }
 
@@ -78,8 +93,9 @@ namespace EntidadesAbstractas
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
-            this.Dni = dni;
             this.Nacionalidad = nacionalidad;
+            this.SetDni(dni);
+            
 
         }
 
@@ -87,8 +103,9 @@ namespace EntidadesAbstractas
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
-            this.StringToDni = dni;
             this.Nacionalidad = nacionalidad;
+            this.SetDniString(dni);
+            
 
         }
 
@@ -100,7 +117,7 @@ namespace EntidadesAbstractas
             datos.Append($"NOMBRE COMPLETO:{this.Nombre}");
             datos.AppendLine($",{this.Apellido}");
             datos.AppendLine($"NACIONALIDAD:{this.Nacionalidad}");
-            datos.AppendLine($"DNI:{this.Dni}");
+            datos.AppendLine($"DNI:{this.RetornoDni()}");
 
 
 
@@ -108,26 +125,27 @@ namespace EntidadesAbstractas
         }
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
-            if (nacionalidad == ENacionalidad.Argentino)
+            if (nacionalidad == ENacionalidad.Argentino && dato >= 1 && dato <= 89999999)
             {
-                if (dato <= 1 && dato >= 89999999)
-                {
+                
+                
                     return dato;
-                }
+                
             }
-            else if (nacionalidad == ENacionalidad.Extranjero)
+            else if (nacionalidad == ENacionalidad.Extranjero && dato >= 90000000 && dato <= 99999999)
             {
-                if (dato <= 90000000 && dato >= 99999999)
-                {
+               
+                
                     return dato;
-                }
+                
             }
-            else
-            {
+            
+            
                 throw new NacionalidadInvalidaException("Nacionalidad invalida");
-            }
+                return 0;
+            
            
-            return 0;
+            
         }
 
         private int ValidarDni(ENacionalidad nacionalidad, string dato)
@@ -142,10 +160,10 @@ namespace EntidadesAbstractas
                     return resultado;
                 }
             }
-            else
-            {
+            
+            
                 throw new DniInvalidoException("Dni invalido");
-            }
+            
             
             return 0;
         }
