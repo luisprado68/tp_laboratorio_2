@@ -12,3 +12,5 @@ C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Main\ob
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Main\obj\Debug\Main.csproj.CopyComplete
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Main\obj\Debug\Main.exe
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Main\obj\Debug\Main.pdb
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Main\bin\Debug\Archivos.dll
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Main\bin\Debug\Archivos.pdb

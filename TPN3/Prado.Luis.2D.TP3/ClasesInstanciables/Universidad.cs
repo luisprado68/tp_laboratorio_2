@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntidadesAbstractas;
 using Excepciones;
+using Archivos;
 
 namespace ClasesInstanciables
 {
@@ -188,6 +189,45 @@ namespace ClasesInstanciables
             datos.Append(this.MostrarDatos(this));
 
             return datos.ToString();
+        }
+
+
+        /// <summary>
+        /// Genera un Archivo Xml con los datos de la Universidad
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns>True en caso de que el archivo se genere con éxito</returns>
+        public static bool Guardar(Universidad uni)
+        {
+            Xml<Universidad> archivo = new Xml<Universidad>();
+
+            if(archivo.Guardar(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Universidad.xml", uni))
+            {
+                return true;
+            }
+            else
+            {
+                throw new Exception("Error al Guardar el Archivo");
+                return false;
+            }
+
+            
+        }
+
+        public Universidad Leer()
+        {
+            Xml<Universidad> archivo = new Xml<Universidad>();
+            Universidad nueva;
+            
+            if (archivo.Leer(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Universidad.xml", out nueva))
+            {
+                return nueva;
+            }
+            else
+            {
+                throw new System.Exception("Error al Guardar el Archivo");
+                return nueva;
+            }
         }
     }
 }

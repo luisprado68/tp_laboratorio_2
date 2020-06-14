@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Archivos;
+using Excepciones;
 
 namespace ClasesInstanciables
 {
@@ -97,7 +98,18 @@ namespace ClasesInstanciables
         /// <returns>True en caso de que se haya creado el archivo</returns>
         public static bool Guardar(Jornada jornada)
         {
-            return new Texto().Guardar(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", jornada.ToString()) ? true : throw new ArchivosException(new System.Exception("Error al Guardar el Archivo"));
+            Texto texto = new Texto();
+            
+            if(texto.Guardar(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Jornada.txt", jornada.ToString()))
+            {
+                return true;
+            }
+            else
+            {
+                 throw new ArchivosException(new Exception("Error al Guardar el Archivo"));
+                return false;
+            }
+             
         }
 
         /// <summary>
@@ -106,9 +118,18 @@ namespace ClasesInstanciables
         /// <returns>el texto con el contenido del archivo</returns>
         public string Leer()
         {
-            string j = string.Empty;
-            if (!(new Texto().Leer(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", out j) ? true : throw new System.Exception("Error al leer el Archivo"))) ;
-            return j;
+            string leido;
+            Texto texto = new Texto();
+
+            if(texto.Leer(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Jornada.txt", out leido))
+            {
+                return leido;
+            }
+            else
+            {
+                throw new Exception("Error al leer el Archivo");
+            }
+
         }
     }
 }
