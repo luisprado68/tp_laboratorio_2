@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using Excepciones;
 
 namespace Archivos
 {
@@ -19,14 +19,19 @@ namespace Archivos
         /// <returns>True en caso de generar el archivo correctamente</returns>
         public bool Guardar(string archivo, string datos)
         {
-            FileStream file = new FileStream(archivo, FileMode.Create);
+            try
+            {
+                StreamWriter escritura = new StreamWriter(archivo, true);
 
-            BinaryFormatter binario = new BinaryFormatter();
+                escritura.WriteLine(datos.ToString());
+                escritura.Close();
 
-            binario.Serialize(file, datos.Trim());
-
-            file.Close();
-            return true;
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new ArchivosException(e);
+            }
         }
 
         /// <summary>
@@ -37,15 +42,21 @@ namespace Archivos
         /// <returns>True en caso de que haya podido leerlo</returns>
         public bool Leer(string archivo, out string datos)
         {
-            FileStream file = new FileStream(archivo, FileMode.Open);
-
-            BinaryFormatter binario = new BinaryFormatter();
-
-            datos = (string)binario.Deserialize(file);
-
-            file.Close();
-
-            return true;
+            try
+            {
+                StreamReader lectura = new StreamReader(archivo, true);
+                
+                while ((datos = lectura.ReadLine()) != null)
+                {
+                    Console.WriteLine(datos);
+                }
+                lectura.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new ArchivosException(ex);
+            }
         }
     }
 }

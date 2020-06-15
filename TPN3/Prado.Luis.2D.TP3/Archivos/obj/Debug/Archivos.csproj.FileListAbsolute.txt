@@ -4,3 +4,6 @@ C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Archivo
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Archivos\obj\Debug\Archivos.dll
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Archivos\obj\Debug\Archivos.pdb
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Archivos\bin\Debug\Excepciones.dll
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Archivos\bin\Debug\Excepciones.pdb
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Archivos\obj\Debug\Archivos.csproj.CopyComplete

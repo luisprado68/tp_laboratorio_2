@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using Excepciones;
 
 namespace Archivos
 {
@@ -18,13 +19,25 @@ namespace Archivos
         /// <returns></returns>
         public bool Guardar(string archivo, T datos)
         {
-            XmlTextWriter escribir = new XmlTextWriter(archivo, Encoding.UTF8);
+            try
+            {
+            
+             XmlTextWriter escribir = new XmlTextWriter(archivo, Encoding.UTF8);
 
             XmlSerializer serializar = new XmlSerializer(typeof(T));
 
             serializar.Serialize(escribir, datos);
             escribir.Close();
             return true;
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArchivosException(ex);
+            }
+            finally
+            {
+            }
         }
 
         /// <summary>
