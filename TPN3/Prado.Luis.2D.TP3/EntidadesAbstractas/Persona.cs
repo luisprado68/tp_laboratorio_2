@@ -7,7 +7,7 @@ using Excepciones;
 
 namespace EntidadesAbstractas
 {
-   
+
     public abstract class Persona
     {
         /// <summary>
@@ -30,8 +30,10 @@ namespace EntidadesAbstractas
         public string Nombre
         {
             get { return this.nombre; }
-            set { 
-                this.nombre =ValidarNombreApellido(value); }
+            set
+            {
+                this.nombre = ValidarNombreApellido(value);
+            }
         }
 
         /// <summary>
@@ -40,7 +42,7 @@ namespace EntidadesAbstractas
         public string Apellido
         {
             get { return this.apellido; }
-            set { this.apellido =  ValidarNombreApellido(value); ; }
+            set { this.apellido = ValidarNombreApellido(value); ; }
         }
 
         /// <summary>
@@ -84,7 +86,7 @@ namespace EntidadesAbstractas
         {
             this.nombre = "Sin Nombre";
             this.apellido = "Sin Apellido";
-            
+
         }
         /// <summary>
         /// Constructor Persona
@@ -92,7 +94,7 @@ namespace EntidadesAbstractas
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
         /// <param name="nacionalidad"></param>
-        public Persona(string nombre, string apellido, ENacionalidad nacionalidad):this()
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad) : this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -107,13 +109,11 @@ namespace EntidadesAbstractas
         /// <param name="apellido"></param>
         /// <param name="dni"></param>
         /// <param name="nacionalidad"></param>
-        public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad):this()
+        public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad) : this(nombre,apellido,nacionalidad)
         {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.Nacionalidad = nacionalidad;
-            this.Dni= dni;
-            
+           
+            this.Dni = dni;
+
 
         }
         /// <summary>
@@ -123,13 +123,11 @@ namespace EntidadesAbstractas
         /// <param name="apellido"></param>
         /// <param name="dni"></param>
         /// <param name="nacionalidad"></param>
-        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad):this()
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.Nacionalidad = nacionalidad;
-            this.StringToDni=dni;
             
+            this.StringToDni = dni;
+
 
         }
         /// <summary>
@@ -146,8 +144,6 @@ namespace EntidadesAbstractas
             datos.AppendLine($"NACIONALIDAD:{this.Nacionalidad}");
             datos.AppendLine($"DNI:{this.Dni}");
 
-
-
             return datos.ToString();
         }
         /// <summary>
@@ -160,17 +156,17 @@ namespace EntidadesAbstractas
         {
             if (nacionalidad == ENacionalidad.Argentino && dato >= 1 && dato <= 89999999)
             {
-                 return dato;
-                
+                return dato;
+
             }
             else if (nacionalidad == ENacionalidad.Extranjero && dato >= 90000000 && dato <= 99999999)
             {
-               
-                    return dato;
+
+                return dato;
             }
 
-                throw new NacionalidadInvalidaException("Nacionalidad invalida");
-                return 0;
+            throw new NacionalidadInvalidaException("Nacionalidad invalida");
+           
 
         }
 
@@ -192,9 +188,9 @@ namespace EntidadesAbstractas
                     return resultado;
                 }
             }
-            
-                throw new DniInvalidoException("Dni invalido");
-            return 0;
+
+            throw new DniInvalidoException("Dni invalido");
+          
         }
 
         /// <summary>
@@ -206,7 +202,7 @@ namespace EntidadesAbstractas
         {
             foreach (char item in dato)
             {
-                if (item >= 'a' && item >= 'z' && item >= 'A' && item >= 'Z')
+                if (item >= 'a' && item >= 'z' && item >= 'A' && item >= 'Z' && item == ' ')
                 {
                     return dato;
                 }

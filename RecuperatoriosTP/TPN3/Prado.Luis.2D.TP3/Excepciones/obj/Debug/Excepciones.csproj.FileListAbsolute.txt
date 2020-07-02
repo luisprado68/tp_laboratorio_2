@@ -4,3 +4,9 @@ C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Excepci
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Excepciones\obj\Debug\Excepciones.dll
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Excepciones\obj\Debug\Excepciones.pdb
 C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\TPN3\Prado.Luis.2D.TP3\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\RecuperatoriosTP\TPN3\Prado.Luis.2D.TP3\Excepciones\bin\Debug\Excepciones.dll
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\RecuperatoriosTP\TPN3\Prado.Luis.2D.TP3\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\RecuperatoriosTP\TPN3\Prado.Luis.2D.TP3\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\RecuperatoriosTP\TPN3\Prado.Luis.2D.TP3\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\RecuperatoriosTP\TPN3\Prado.Luis.2D.TP3\Excepciones\obj\Debug\Excepciones.dll
+C:\Users\luisp\Downloads\Trabajos Practicos Lab 2\RecuperatoriosTP\TPN3\Prado.Luis.2D.TP3\Excepciones\obj\Debug\Excepciones.pdb

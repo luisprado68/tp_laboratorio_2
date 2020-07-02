@@ -8,7 +8,7 @@ using EntidadesAbstractas;
 
 namespace ClasesInstanciables
 {
-    
+
     public sealed class Profesor : Universitario
     {
         private Queue<Universidad.EClases> clasesDelDia;
@@ -27,7 +27,7 @@ namespace ClasesInstanciables
         /// </summary>
         public Profesor() : base()
         {
-            
+
         }
         /// <summary>
         /// Construcor Profesor

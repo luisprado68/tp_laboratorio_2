@@ -13,7 +13,7 @@ namespace ClasesInstanciables
         /// /Enumerado de estados de cuenta
         /// </summary>
         public enum EEstadoCuenta
-     
+
         {
             AlDia,
             Deudor,

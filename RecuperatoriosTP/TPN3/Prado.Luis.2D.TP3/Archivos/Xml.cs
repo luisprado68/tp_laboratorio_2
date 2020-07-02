@@ -19,25 +19,29 @@ namespace Archivos
         /// <returns></returns>
         public bool Guardar(string archivo, T datos)
         {
-            try
+
+            if (!string.IsNullOrEmpty(archivo) && datos != null)
             {
+                try
+                {
 
-                XmlTextWriter escribir = new XmlTextWriter(archivo, Encoding.UTF8);
+                    using (XmlTextWriter escribir = new XmlTextWriter(archivo, Encoding.UTF8))
+                    {
+                        XmlSerializer serializar = new XmlSerializer(typeof(T));
 
-                XmlSerializer serializar = new XmlSerializer(typeof(T));
+                        serializar.Serialize(escribir, datos);
+                    }
+                    return true;
 
-                serializar.Serialize(escribir, datos);
-                escribir.Close();
-                return true;
-
+                }
+                catch (Exception ex)
+                {
+                    throw new ArchivosException(ex);
+                }
             }
-            catch (Exception ex)
-            {
-                throw new ArchivosException(ex);
-            }
-            finally
-            {
-            }
+
+            return false;
+
         }
 
         /// <summary>
@@ -48,24 +52,30 @@ namespace Archivos
         /// <returns>True en caso de poder leerlo y el objeto T</returns>
         public bool Leer(string archivo, out T datos)
         {
-            try
-            {
-                XmlTextReader leer = new XmlTextReader(archivo);
+            datos = default(T);
 
-                XmlSerializer ser = new XmlSerializer(typeof(T));
-
-                datos = (T)ser.Deserialize(leer);
-
-                leer.Close();
-                return true;
-            }
-            catch (Exception ex)
+            if (!string.IsNullOrEmpty(archivo) && datos != null)
             {
-                throw new ArchivosException(ex);
+                try
+                {
+                    using (XmlTextReader leer = new XmlTextReader(archivo))
+                    {
+                        XmlSerializer ser = new XmlSerializer(typeof(T));
+
+                        datos = (T)ser.Deserialize(leer);
+
+                        return true;
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArchivosException(ex);
+                }
             }
-            finally
-            {
-            }
+
+            return false;
 
         }
     }

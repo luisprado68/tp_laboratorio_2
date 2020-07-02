@@ -55,7 +55,7 @@ namespace EntidadesAbstractas
             return datos.ToString();
         }
 
-     
+
         protected abstract string ParticiparEnClase();
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace EntidadesAbstractas
         public static bool operator ==(Universitario pg1, Universitario pg2)
         {
 
-            if (pg1.Equals(pg2) && pg1.Dni== pg2.Dni)
+            if (pg1.Equals(pg2) && pg1.Dni == pg2.Dni)
             {
                 return true;
             }

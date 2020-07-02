@@ -21,14 +21,14 @@ namespace Archivos
         {
             try
             {
-            
-             XmlTextWriter escribir = new XmlTextWriter(archivo, Encoding.UTF8);
 
-            XmlSerializer serializar = new XmlSerializer(typeof(T));
+                XmlTextWriter escribir = new XmlTextWriter(archivo, Encoding.UTF8);
 
-            serializar.Serialize(escribir, datos);
-            escribir.Close();
-            return true;
+                XmlSerializer serializar = new XmlSerializer(typeof(T));
+
+                serializar.Serialize(escribir, datos);
+                escribir.Close();
+                return true;
 
             }
             catch (Exception ex)
@@ -48,14 +48,25 @@ namespace Archivos
         /// <returns>True en caso de poder leerlo y el objeto T</returns>
         public bool Leer(string archivo, out T datos)
         {
-            XmlTextReader leer = new XmlTextReader(archivo);
+            try
+            {
+                XmlTextReader leer = new XmlTextReader(archivo);
 
-            XmlSerializer ser = new XmlSerializer(typeof(T));
+                XmlSerializer ser = new XmlSerializer(typeof(T));
 
-            datos = (T)ser.Deserialize(leer);
+                datos = (T)ser.Deserialize(leer);
 
-            leer.Close();
-            return true;
+                leer.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new ArchivosException(ex);
+            }
+            finally
+            {
+            }
+
         }
     }
 }

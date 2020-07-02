@@ -12,7 +12,7 @@ namespace Pruebas
         /// Espera una excepcion de un alumno igual agregado a universidad
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(AlumnoRepetidoException))]//
+        [ExpectedException(typeof(AlumnoRepetidoException))]
         public void AlumnoRepetido()
         {
             Universidad uni = new Universidad();
@@ -33,7 +33,7 @@ namespace Pruebas
         /// Espera una excepcion de una nacionalidad invalida
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(NacionalidadInvalidaException))]//espera una excepcion de persona sin dni
+        [ExpectedException(typeof(NacionalidadInvalidaException))]
         public void NacionalidadInvalida()
         {
             Universidad uni = new Universidad();

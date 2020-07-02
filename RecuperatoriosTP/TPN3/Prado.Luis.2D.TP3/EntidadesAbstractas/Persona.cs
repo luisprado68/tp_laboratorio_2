@@ -200,14 +200,10 @@ namespace EntidadesAbstractas
         /// <returns>retorna el nombre si cumple con la condiciones de no ser caracter especial y letras caso contrario no carga</returns>
         private string ValidarNombreApellido(string dato)
         {
-            foreach (char item in dato)
-            {
-                if (item >= 'a' && item >= 'z' && item >= 'A' && item >= 'Z' && item == ' ')
-                {
-                    return dato;
-                }
-            }
-            return "";
+            if (!string.IsNullOrEmpty(dato) && !string.IsNullOrWhiteSpace(dato))
+                return dato;
+            else
+                return "";
         }
     }
 }

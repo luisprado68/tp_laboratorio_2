@@ -140,7 +140,7 @@ namespace ClasesInstanciables
             else
             {
                  throw new ArchivosException(new Exception("Error al Guardar el Archivo"));
-                return false;
+               
             }
              
         }
@@ -149,7 +149,7 @@ namespace ClasesInstanciables
         /// Llama a la interface IArchivo para leer un archivo de texto
         /// </summary>
         /// <returns>el texto con el contenido del archivo</returns>
-        public string Leer()
+        public static string Leer()
         {
             string leido;
             Texto texto = new Texto();

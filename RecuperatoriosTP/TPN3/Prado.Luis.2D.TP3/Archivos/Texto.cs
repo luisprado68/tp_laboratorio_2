@@ -8,7 +8,7 @@ using Excepciones;
 
 namespace Archivos
 {
-  
+
     public class Texto : IArchivo<string>
     {
         /// <summary>
@@ -19,20 +19,27 @@ namespace Archivos
         /// <returns>True en caso de generar el archivo correctamente</returns>
         public bool Guardar(string archivo, string datos)
         {
-            try
+            bool retorno = false;
+
+            if (!string.IsNullOrEmpty(archivo) && !string.IsNullOrEmpty(datos))
             {
-                StreamWriter escritura = new StreamWriter(archivo, true);
+                try
+                {
+                    using (StreamWriter escritura = new StreamWriter(archivo, true))
+                    {
+                        escritura.WriteLine(datos.ToString());
 
-                escritura.WriteLine(datos.ToString());
-                escritura.Close();
+                        retorno = true;
+                    }
 
-                return true;
+                }
+                catch (Exception e)
+                {
+                    throw new ArchivosException(e);
+                }
             }
-            catch (Exception e)
-            {
-                throw new ArchivosException(e);
-            }
 
+            return retorno;
         }
 
         /// <summary>
@@ -40,24 +47,35 @@ namespace Archivos
         /// </summary>
         /// <param name="archivo"></param>
         /// <param name="datos"></param>
-        /// <returns>True en caso de que haya podido leerlo</returns>
+        /// <returns>True en caso de que haya podido leerlo de lo contrario falso y vacio los datos</returns>
         public bool Leer(string archivo, out string datos)
         {
-            try
+            bool retorno = false;
+            datos = "";
+
+            if (!string.IsNullOrEmpty(archivo) && !string.IsNullOrEmpty(datos))
             {
-                StreamReader lectura = new StreamReader(archivo, true);
-                
-                while ((datos = lectura.ReadLine()) != null)
+                try
                 {
-                    Console.WriteLine(datos);
+                    using (StreamReader lectura = new StreamReader(archivo, true))
+                    {
+                        while ((datos = lectura.ReadLine()) != null)
+                        {
+                            Console.WriteLine(datos);
+                        }
+
+                        retorno = true;
+                    }
+
                 }
-                lectura.Close();
-                return true;
+                catch (Exception ex)
+                {
+                    throw new ArchivosException(ex);
+                }
             }
-            catch (Exception ex)
-            {
-                throw new ArchivosException(ex);
-            }
+
+            return retorno;
+
         }
     }
 }

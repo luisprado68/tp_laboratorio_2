@@ -10,7 +10,7 @@ using Archivos;
 
 namespace ClasesInstanciables
 {
-   
+
     public class Universidad
     {
         /// <summary>
@@ -27,7 +27,7 @@ namespace ClasesInstanciables
         private List<Alumno> alumnos;
         private List<Jornada> jornada;
         private List<Profesor> profesores;
-        
+
         /// <summary>
         /// Obtiene o setea la lista de alumnos
         /// </summary>
@@ -60,11 +60,11 @@ namespace ClasesInstanciables
         /// </summary>
         /// <param name="i"></param>
         /// <returns></returns>
-        public Jornada this[int i] 
+        public Jornada this[int i]
         {
-            
-            get { return this.jornada[i]; } 
-            set { this.jornada[i] = value; } 
+
+            get { return this.jornada[i]; }
+            set { this.jornada[i] = value; }
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace ClasesInstanciables
         {
             foreach (Alumno item in u.Alumnos)
             {
-                if(item == a)
+                if (item == a)
                 {
                     return true;
                 }
@@ -141,8 +141,8 @@ namespace ClasesInstanciables
         /// <returns> retorna el profesor </returns>
         public static Profesor operator ==(Universidad u, EClases clase)
         {
-            
-            for (int i=0;i<u.Profesores.Count;i++)
+
+            for (int i = 0; i < u.Profesores.Count; i++)
             {
                 if (u.Profesores[i] == clase)
                 {
@@ -152,9 +152,9 @@ namespace ClasesInstanciables
 
             }
 
-                throw new SinProfesorException();
-            
-            
+            throw new SinProfesorException();
+
+
         }
         /// <summary>
         /// Compara al primer  profesor que tenga una clase distinta a  la pasada por parametro si no lanza la excepcion
@@ -164,7 +164,7 @@ namespace ClasesInstanciables
         /// <returns> retorna el profesor </returns>
         public static Profesor operator !=(Universidad u, EClases clase)
         {
-           
+
             for (int i = 0; i < u.Profesores.Count; i++)
             {
                 if (u.Profesores[i] != clase)
@@ -177,8 +177,8 @@ namespace ClasesInstanciables
             }
             throw new SinProfesorException();
 
-          
-               
+
+
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace ClasesInstanciables
         /// <returns>Retorna la universidad</returns>
         public static Universidad operator +(Universidad u, EClases clase)
         {
-            int indice=0;
+
             Profesor profe;
 
             profe = u == clase;
@@ -215,7 +215,7 @@ namespace ClasesInstanciables
         /// <returns>Retorna objeto la universidad</returns>
         public static Universidad operator +(Universidad u, Alumno a)
         {
-            if(u != a)
+            if (u != a)
             {
                 u.Alumnos.Add(a);
             }
@@ -235,7 +235,7 @@ namespace ClasesInstanciables
         /// <returns>Retorna objeto la universidad</returns>
         public static Universidad operator +(Universidad u, Profesor p)
         {
-            if(u != p)
+            if (u != p)
             {
                 u.Profesores.Add(p);
 
@@ -284,17 +284,17 @@ namespace ClasesInstanciables
         {
             Xml<Universidad> archivo = new Xml<Universidad>();
 
-            if(archivo.Guardar(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Universidad.xml", uni))
+            if (archivo.Guardar(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Universidad.xml", uni))
             {
                 return true;
             }
             else
             {
                 throw new Exception("Error al Guardar el Archivo");
-                return false;
+
             }
 
-            
+
         }
         /// <summary>
         /// Genera un Archivo Xml con los datos de la Universidad
@@ -304,15 +304,15 @@ namespace ClasesInstanciables
         {
             Xml<Universidad> archivo = new Xml<Universidad>();
             Universidad nueva;
-            
-            if (archivo.Leer(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Universidad.xml", out nueva))
+
+            if (archivo.Leer(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Universidad.xml", out nueva))
             {
                 return nueva;
             }
             else
             {
-                throw new System.Exception("Error al Guardar el Archivo");
-                return nueva;
+                throw new Exception("Error al Guardar el Archivo");
+
             }
         }
     }

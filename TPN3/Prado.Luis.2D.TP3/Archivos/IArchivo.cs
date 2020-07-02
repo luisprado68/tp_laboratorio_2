@@ -14,14 +14,14 @@ namespace Archivos
         /// <param name="archivo"></param>
         /// <param name="datos"></param>
         /// <returns></returns>
-         bool Guardar(string archivo, T datos);
+        bool Guardar(string archivo, T datos);
         /// <summary>
         /// metodo leer incializada 
         /// </summary>
         /// <param name="archivo"></param>
         /// <param name="datos"></param>
         /// <returns></returns>
-         bool Leer(string archivo, out T datos);
+        bool Leer(string archivo, out T datos);
 
 
     }

@@ -253,7 +253,7 @@ namespace ClasesInstanciables
             StringBuilder datos = new StringBuilder();
 
             datos.AppendLine("Jornada");
-            foreach (Jornada item in this.Jornadas)
+            foreach (Jornada item in uni.Jornadas)
             {
                 datos.AppendLine(item.ToString());
             }

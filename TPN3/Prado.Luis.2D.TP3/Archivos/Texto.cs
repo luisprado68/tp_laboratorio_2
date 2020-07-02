@@ -8,7 +8,7 @@ using Excepciones;
 
 namespace Archivos
 {
-    [Serializable]
+  
     public class Texto : IArchivo<string>
     {
         /// <summary>
@@ -32,6 +32,7 @@ namespace Archivos
             {
                 throw new ArchivosException(e);
             }
+
         }
 
         /// <summary>
