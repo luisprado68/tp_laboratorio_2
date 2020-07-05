@@ -7,14 +7,15 @@ using System.Threading;
 
 namespace Entidades
 {
+    public enum EEstado
+    {
+        Ingresado,
+        EnViaje,
+        Entregado
+    }
     public class Paquete : IMostrar<Paquete>
     {
-        public enum EEstado
-        {
-            Ingresado,
-            EnViaje,
-            Entregado
-        }
+        
         private string direccionEntrega;
         private EEstado estado;
         private string trackingID;
