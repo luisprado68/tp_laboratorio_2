@@ -54,7 +54,7 @@ namespace Archivos
         {
             datos = default(T);
 
-            if (!string.IsNullOrEmpty(archivo) && datos != null)
+            if (!string.IsNullOrEmpty(archivo))
             {
                 try
                 {
